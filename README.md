@@ -1,6 +1,6 @@
 # comcomp
 
-'Comcomp' helps integrate Compojure routes with Stuart Sierra's 'Component' library.
+'Comcomp' helps integrate Compojure routes with Stuart Sierra's '[Component](https://github.com/stuartsierra/component)' library.
 
 It provide `defroutes-with-deps` macro which you can use to describe 'route component'
 
@@ -10,8 +10,9 @@ It provide `defroutes-with-deps` macro which you can use to describe 'route comp
 
                        [first-dep second-dep]        ; <- Dependency list.
 
-                       (GET "/hello" [] (some-func first-dep))    ; <- Routes spec
-                       (POST "/word" [] (some-second-func second)) ;You can use previously defined
+                       (GET "/hello" [] (some-func first-dep))     ; <- Routes spec
+                       (POST "/word" [] (some-second-func second)) ;You can use
+                                                                   ;previously defined
                                                                    ;dependencies
 ```
 
