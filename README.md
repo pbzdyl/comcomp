@@ -8,14 +8,14 @@ It provide `defroutes-with-deps` macro which you can use to describe 'route comp
 
 ```clojure
 (defroutes-with-deps
-                       AppComponent      ; <- Component name
+                       RoutesComponent      ; <- Component name
 
                        [first-dep second-dep]        ; <- Dependency list.
 
-                       (GET "/hello" [] (some-func first-dep))         ; <- Routes spec
-                       (POST "/word" [] (some-second-func second-dep)) ;You can use
-                                                                       ;previously defined
-                                                                       ;dependencies
+                       (GET "/hello" [] (some-func first-dep))          ; <- Routes spec
+                       (POST "/word" [] (some-second-func second-dep))) ;You can use
+                                                                        ;previously defined
+                                                                        ;dependencies
 ```
 Leiningen dependency info:
 ```
