@@ -41,9 +41,9 @@ Leiningen dependency info:
 
                        [app-db]        ; <- Dependency list.
 
-                       (GET "/word" [] (get-word app-db))    ; <- Routes spec
-                       (GET "/count" [] (get-count app-db))) ; You can use previously defined
-                                                             ; dependencies
+                       (GET "/word" [] (get-word app-db))    ;<- Routes spec
+                       (GET "/count" [] (get-count app-db))) ;You can use previously
+                                                             ;defined dependencies
 
 ;Macro will create AppRoutes record. It implements comp/Lifecycle and IRotesDescriber
 ;IRoutesDescriber defines get-routes, you can use this method to get described routes.
@@ -51,7 +51,11 @@ Leiningen dependency info:
 ;Create routes component and provide dependencies.
 (def system (comp/system-map  :app (comp/using (map->App {}) [:app-routes])
                               :app-db (comp/using ...)
-                              :app-routes (comp/using (map->AppRoutes {}) ;<- create routes component
+                              :app-routes (comp/using (map->AppRoutes {})
+                                                       ;      ^
+                                                       ;      |
+                                                       ;Create routes component
+
                                                        [:app-db]))) ;<- Provide dependency
 
 ;Use comcomp/get-routes to get described routes from routes component.
@@ -61,7 +65,12 @@ Leiningen dependency info:
   (start [this]
     (assoc this :server
                   (rj/run-jetty (handler/site
-                                  (routes (comcomp/get-routes app-routes))) ;<- Run app with described routes
+
+                                  (routes (comcomp/get-routes app-routes)))
+                                  ;                ^
+                                  ;                |
+                                  ; Run app with described routes
+
                                   {:port 8080 :join? false})))
   (stop [this] (.stop (:server this)) this))
 
