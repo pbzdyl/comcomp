@@ -1,5 +1,7 @@
 # comcomp
 
+Be careful, it is alpha version!
+
 'Comcomp' helps integrate Compojure routes with Stuart Sierra's '[Component](https://github.com/stuartsierra/component)' library.
 
 It provide `defroutes-with-deps` macro which you can use to describe 'route component'
@@ -14,6 +16,10 @@ It provide `defroutes-with-deps` macro which you can use to describe 'route comp
                        (POST "/word" [] (some-second-func second)) ;You can use
                                                                    ;previously defined
                                                                    ;dependencies
+```
+Leiningen dependency info:
+```
+[comcomp "0.1.0-SNAPSHOT"]
 ```
 
 
