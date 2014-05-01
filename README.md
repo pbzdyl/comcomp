@@ -12,10 +12,10 @@ It provide `defroutes-with-deps` macro which you can use to describe 'route comp
 
                        [first-dep second-dep]        ; <- Dependency list.
 
-                       (GET "/hello" [] (some-func first-dep))     ; <- Routes spec
-                       (POST "/word" [] (some-second-func second)) ;You can use
-                                                                   ;previously defined
-                                                                   ;dependencies
+                       (GET "/hello" [] (some-func first-dep))         ; <- Routes spec
+                       (POST "/word" [] (some-second-func second-dep)) ;You can use
+                                                                       ;previously defined
+                                                                       ;dependencies
 ```
 Leiningen dependency info:
 ```
