@@ -10,7 +10,7 @@
   (-> routes
       (wrapp-with-dep deps)))
 
-(defprotocol IRotesDescriber
+(defprotocol IRoutesDescriber
   (get-routes [this]))
 
 (defn- attach-request [[method url bindings & body ] unique-alias]
@@ -41,7 +41,7 @@
            (assoc ~'this ::routes (make-handler #'routes-name# ~'dep-map))))
        (stop [~'this] ~'this)
 
-       IRotesDescriber
+       IRoutesDescriber
        (get-routes [~'this] (::routes ~'this)))))
 
 
