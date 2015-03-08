@@ -1,4 +1,4 @@
-(defproject comcomp "0.1.0-SNAPSHOT"
+(defproject org.clojars.badyl/comcomp "0.1.0-SNAPSHOT"
   :description "'Comcomp' helps integrate compojure routes with Stuart Sierra's 'Component' library"
   :url "https://github.com/ggenikus/comcomp"
   :license {:name "Eclipse Public License"
